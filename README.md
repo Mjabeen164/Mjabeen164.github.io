@@ -3,7 +3,7 @@
 This repository hosts my **personal data analytics portfolio website**, built using **HTML & CSS** and deployed via **GitHub Pages**.
 
 🔗 **Live Portfolio:**  
-👉 https://Mjabeen164.github.io
+👉 https://mjabeen164.github.io/
 
 ---
 
