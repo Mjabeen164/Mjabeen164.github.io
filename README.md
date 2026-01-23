@@ -9,7 +9,7 @@ This repository hosts my **personal data analytics portfolio website**, built us
 
 ## 👋 About Me
 
-I’m an aspiring **Data Analyst** with hands-on experience in **SQL, Power BI, Excel, and Python**, focused on transforming raw datasets into **clear, decision-ready insights** across healthcare, business, and people analytics.
+Data Analyst with hands-on experience in SQL, Power BI, Excel, and Python, focused on transforming raw datasets into clear, decision-ready insights across healthcare, business, and people analytics.
 
 My work emphasizes:
 - End-to-end analytics (data cleaning → analysis → visualization → insights)
