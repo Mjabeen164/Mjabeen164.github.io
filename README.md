@@ -18,6 +18,7 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 ## ⭐ Featured Projects
 
 ### 1. 🫁 Smoking-Related Health Risk Analysis
+![Smoking Dashboard](assets/images/smoking-dashboard.png)  
 **Domain:** Healthcare Analytics | **Tools:** SQL, Power BI  
 **Problem:** Understand how smoking duration and intensity impacts different vital organs and overall health risk.  
 **What I Did:**
