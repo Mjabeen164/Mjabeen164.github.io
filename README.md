@@ -1,62 +1,75 @@
-# 🌐 Munawer Jabeen — Data Analyst Portfolio
+# Munawer Jabeen | Data Analyst Portfolio
 
-This repository hosts my **personal data analytics portfolio website**, built using **HTML & CSS** and deployed via **GitHub Pages**.
+Hi, I’m **Munawer Jabeen** 👋  
+Data Analyst delivering **SQL- and Power BI-driven insights** to support **business, healthcare, and HR analytics** decision-making.  
+I work on **end-to-end analytics projects** — from data cleaning and analysis to dashboarding and insight communication — with a strong focus on **clarity, usability, and real-world relevance**.
 
-🔗 **Live Portfolio:**  
-👉 https://mjabeen164.github.io/
-
----
-
-## 👋 About Me
-
-Data Analyst with hands-on experience in SQL, Power BI, Excel, and Python, focused on transforming raw datasets into clear, decision-ready insights across healthcare, business, and people analytics.
-
-My work emphasizes:
-- End-to-end analytics (data cleaning → analysis → visualization → insights)
-- Business and stakeholder-oriented storytelling
-- Clean, professional dashboards and documentation
+[🌐 View Portfolio Online](https://mjabeen164.github.io/)  
 
 ---
 
-## 🧰 Tech Stack
-
-- **Frontend:** HTML, CSS  
-- **Analytics Tools:** SQL, Power BI, Excel, Python  
-- **Visualization:** Power BI, Tableau  
-- **Deployment:** GitHub Pages  
+## 🛠 Core Skills
+**Technical Skills:** SQL, Python (Pandas, Matplotlib), Power BI, Tableau, Excel (Pivot Tables, KPIs, Dashboards)  
+**Analytics Domains:** Healthcare Analytics, Business Performance, People Analytics  
+**Other Skills:** Data Cleaning, Visualization, Dashboard Design, KPI Tracking  
 
 ---
 
-## ⭐ Featured Projects (Showcased on the Website)
+## ⭐ Featured Projects
 
-- 🫁 **Smoking-Related Health Risk Analysis (Healthcare Analytics)**  
-- 🛒 **E-Commerce Sales & Profitability Analysis**  
-- 👥 **HR Analytics Dashboard (People Analytics)**  
-
-Each project includes:
-- Clear business problem statements  
-- Insight-driven dashboards  
-- SQL analysis and documentation  
-- Actionable conclusions  
+### 1. 🫁 Smoking-Related Health Risk Analysis
+**Domain:** Healthcare Analytics | **Tools:** SQL, Power BI  
+**Problem:** Understand how smoking duration and intensity impacts different vital organs and overall health risk.  
+**What I Did:**
+- Modeled and analyzed smoking behavior, demographics, and organ-level health indicators using SQL  
+- Built an interactive Power BI dashboard to compare risk across organs, age groups, and smoking patterns  
+**Key Insight:** Smoking-related health risks are systemic rather than isolated, increasing sharply with longer smoking duration and higher daily intake — particularly among older populations.  
+🔗 [View GitHub Repository](https://github.com/mjabeen164/Smoking-Health-Risk)
 
 ---
 
-## 📁 Repository Structure
+### 2. 🛒 E-Commerce Sales & Profitability Analysis
+**Domain:** Business Analytics | **Tools:** SQL, Power BI  
+**Problem:** Sales were growing, but profitability was inconsistent across categories and regions.  
+**What I Did:**
+- Analyzed revenue, profit, discounting, and product performance  
+- Designed dashboards to track margin erosion and identify loss-making categories  
+**Key Insight:** High revenue does not guarantee profitability — aggressive discounting significantly reduced margins in multiple categories.  
+🔗 [View GitHub Repository](https://github.com/mjabeen164/Ecommerce-Sales)
 
-├── index.html # Portfolio website homepage
-├── style.css # Styling and layout
-├── images/ # Dashboard screenshots
-└── README.md # Repository documentation
+---
 
+### 3. 👥 HR Analytics Dashboard
+**Domain:** People Analytics | **Tools:** Power BI  
+**Problem:** Identify patterns driving employee attrition and department-level retention risk.  
+**What I Did:**
+- Analyzed employee tenure, attrition trends, and departmental distribution  
+- Built a Power BI dashboard to highlight high-risk segments  
+**Key Insight:** Early-tenure employees and specific departments consistently show higher attrition risk, pointing to onboarding and role-fit gaps.  
+🔗 [View GitHub Repository](https://github.com/mjabeen164/HR-Analytics)
+
+---
+
+## 📘 Practice & Learning Projects
+- SQL query practice & exploratory analysis  
+- Python EDA projects (Pandas, Matplotlib)  
+- Power BI dashboard experiments  
+- Continuous improvement on visualization & insights  
 
 ---
 
 ## 📬 Contact
-
-- 📧 Email: munawerjabeen703@gmail.com  
-- 🔗 LinkedIn: https://www.linkedin.com/in/munawer-jabeen-900811380/
+- **Email:** [munawerjabeen703@gmail.com](mailto:munawerjabeen703@gmail.com)  
+- **LinkedIn:** [linkedin.com/in/munawer-jabeen](https://linkedin.com/in/munawer-jabeen)  
 
 ---
 
-⭐ If you’re a recruiter or hiring manager,  
-please visit the **live portfolio** to explore my projects in detail.
+## 🔖 GitHub Topics
+`Data-Analyst` `SQL` `Power-BI` `Healthcare-Analytics` `Business-Analytics` `HR-Analytics` `Portfolio`  
+
+---
+
+**Notes for Recruiters / Visitors:**  
+- Use the top navigation buttons on the portfolio page to view projects in **Healthcare, Business, or HR-first order** depending on your interest.  
+- Each project highlights **real-world business problems, actionable insights, and interactive dashboards**.  
+- Practice & learning projects demonstrate **ongoing skill development and commitment to analytics excellence**.
