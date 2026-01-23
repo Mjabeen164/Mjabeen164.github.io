@@ -30,6 +30,7 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 ---
 
 ### 2. 🛒 E-Commerce Sales & Profitability Analysis
+![Ecommerce Dashboard](assets/images/ecommerce-dashboard.png) 
 **Domain:** Business Analytics | **Tools:** SQL, Power BI  
 **Problem:** Sales were growing, but profitability was inconsistent across categories and regions.  
 **What I Did:**
@@ -41,6 +42,7 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 ---
 
 ### 3. 👥 HR Analytics Dashboard
+![HR Dashboard](assets/images/hr-dashboard.png) 
 **Domain:** People Analytics | **Tools:** Power BI  
 **Problem:** Identify patterns driving employee attrition and department-level retention risk.  
 **What I Did:**
