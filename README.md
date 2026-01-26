@@ -25,7 +25,7 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 - Modeled and analyzed smoking behavior, demographics, and organ-level health indicators using SQL  
 - Built an interactive Power BI dashboard to compare risk across organs, age groups, and smoking patterns  
 **Key Insight:** Smoking-related health risks are systemic rather than isolated, increasing sharply with longer smoking duration and higher daily intake — particularly among older populations.  
-🔗 [View GitHub Repository]https://github.com/Mjabeen164/Smoking-Related-Health-Risk-Analysis-Across-Vital-Organs)
+🔗 [View GitHub Repository](https://github.com/Mjabeen164/Smoking-Related-Health-Risk-Analysis-Across-Vital-Organs)
 
 ---
 
