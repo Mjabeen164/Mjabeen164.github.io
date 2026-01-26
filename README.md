@@ -25,7 +25,7 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 - Modeled and analyzed smoking behavior, demographics, and organ-level health indicators using SQL  
 - Built an interactive Power BI dashboard to compare risk across organs, age groups, and smoking patterns  
 **Key Insight:** Smoking-related health risks are systemic rather than isolated, increasing sharply with longer smoking duration and higher daily intake — particularly among older populations.  
-🔗 [View GitHub Repository](https://github.com/mjabeen164/Smoking-Health-Risk)
+🔗 [View GitHub Repository]https://github.com/Mjabeen164/Smoking-Related-Health-Risk-Analysis-Across-Vital-Organs)
 
 ---
 
@@ -37,7 +37,7 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 - Analyzed revenue, profit, discounting, and product performance  
 - Designed dashboards to track margin erosion and identify loss-making categories  
 **Key Insight:** High revenue does not guarantee profitability — aggressive discounting significantly reduced margins in multiple categories.  
-🔗 [View GitHub Repository](https://github.com/mjabeen164/Ecommerce-Sales)
+🔗 [View GitHub Repository](https://github.com/Mjabeen164/E-Commerce-Sales-Profitability-Analysis)
 
 ---
 
@@ -49,7 +49,7 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 - Analyzed employee tenure, attrition trends, and departmental distribution  
 - Built a Power BI dashboard to highlight high-risk segments  
 **Key Insight:** Early-tenure employees and specific departments consistently show higher attrition risk, pointing to onboarding and role-fit gaps.  
-🔗 [View GitHub Repository](https://github.com/mjabeen164/HR-Analytics)
+🔗 [View GitHub Repository](https://github.com/Mjabeen164/HR-Analytics-Dashboard----Power-BI)
 
 ---
 
@@ -63,7 +63,7 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 
 ## 📬 Contact
 - **Email:** [munawerjabeen703@gmail.com](mailto:munawerjabeen703@gmail.com)  
-- **LinkedIn:** [linkedin.com/in/munawer-jabeen](https://linkedin.com/in/munawer-jabeen)  
+- **LinkedIn:** [linkedin.com/in/munawer-jabeen](www.linkedin.com/in/munawer-jabeen-900811380)  
 
 ---
 
