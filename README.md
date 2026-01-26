@@ -63,7 +63,7 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 
 ## 📬 Contact
 - **Email:** [munawerjabeen703@gmail.com](mailto:munawerjabeen703@gmail.com)  
-- **LinkedIn:** [linkedin.com/in/munawer-jabeen](www.linkedin.com/in/munawer-jabeen-900811380)  
+- **LinkedIn:** [linkedin.com/in/munawer-jabeen](https://www.linkedin.com/in/munawer-jabeen-900811380/)  
 
 ---
 
