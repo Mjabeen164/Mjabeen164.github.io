@@ -736,7 +736,7 @@
       if(btn) btn.classList.add("active");
     }
 
-    <script>
+   <script>
   function buildProjectCard(p){
     const tools = p.tools.map(t => `<span class="tag">🧰 <strong>${t}</strong></span>`).join("");
     const accent = domainAccent(p.domain);
@@ -802,8 +802,6 @@
       </article>
     `;
   }
-</script>
-
 
     // ======= Render Projects Dynamically (Role Switch Menu must stay) =======
     function renderProjects(role = "Healthcare") {
@@ -835,3 +833,5 @@
   </script>
 </body>
 </html>
+
+
