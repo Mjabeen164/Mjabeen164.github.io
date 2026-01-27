@@ -29,6 +29,22 @@
       --hr: #fbbf24;      /* amber */
     }
 
+    .thumb-wrap{
+  margin-top: 10px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+}
+
+.thumb-img{
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+
     *{ box-sizing: border-box; }
     html{ scroll-behavior: smooth; }
     body{
@@ -736,7 +752,7 @@
       if(btn) btn.classList.add("active");
     }
 
-  function buildProjectCard(p){
+    function buildProjectCard(p){
       const tools = p.tools.map(t => `<span class="tag">🧰 <strong>${t}</strong></span>`).join("");
       const accent = domainAccent(p.domain);
 
@@ -773,7 +789,18 @@
                 <a class="btn" href="#contact">Contact Me</a>
               </div>
 
-              <p class="mini-note">Tip: Add a dashboard screenshot thumbnail in the repo and link it here (optional).</p>
+             ${p.thumb ? `
+  <div class="thumb-wrap">
+    <img class="thumb-img"
+         src="${p.thumb}"
+         alt="${p.title} dashboard preview"
+         loading="lazy"
+         onerror="this.closest('.thumb-wrap').style.display='none';" />
+  </div>
+` : `
+  <p class="mini-note">Dashboard preview coming soon.</p>
+`}
+
             </div>
           </div>
         </article>
@@ -810,5 +837,4 @@
   </script>
 </body>
 </html>
-
 
