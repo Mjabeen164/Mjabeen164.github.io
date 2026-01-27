@@ -736,72 +736,49 @@
       if(btn) btn.classList.add("active");
     }
 
-   <script>
   function buildProjectCard(p){
-    const tools = p.tools.map(t => `<span class="tag">🧰 <strong>${t}</strong></span>`).join("");
-    const accent = domainAccent(p.domain);
+      const tools = p.tools.map(t => `<span class="tag">🧰 <strong>${t}</strong></span>`).join("");
+      const accent = domainAccent(p.domain);
 
-    // ✅ Thumbnail HTML (only shows if p.thumb exists)
-    const thumbHtml = p.thumb
-      ? `
-        <div style="margin-top:12px;">
-          <img
-            src="${p.thumb}"
-            alt="${p.title} dashboard preview"
-            style="
-              width:100%;
-              height:190px;
-              object-fit:cover;
-              border-radius:14px;
-              border:1px solid rgba(255,255,255,0.12);
-              background: rgba(255,255,255,0.04);
-            "
-            loading="lazy"
-            onerror="this.style.display='none';"
-          />
-        </div>
-      `
-      : "";
-
-    return `
-      <article class="project-card" aria-label="${p.title}">
-        <div class="project-inner">
-          <div class="project-top">
-            <div>
-              <h3>${p.emoji ? p.emoji + " " : ""}${p.title}</h3>
-              <div class="meta">
-                <span class="badge ${p.domain}">
-                  <span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:${accent};box-shadow:0 0 0 3px rgba(255,255,255,0.06)"></span>
-                  ${p.domain}
-                </span>
-                ${tools}
+      return `
+        <article class="project-card" aria-label="${p.title}">
+          <div class="project-inner">
+            <div class="project-top">
+              <div>
+                <h3>${p.emoji ? p.emoji + " " : ""}${p.title}</h3>
+                <div class="meta">
+                  <span class="badge ${p.domain}">
+                    <span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:${accent};box-shadow:0 0 0 3px rgba(255,255,255,0.06)"></span>
+                    ${p.domain}
+                  </span>
+                  ${tools}
+                </div>
               </div>
             </div>
-          </div>
 
-          ${thumbHtml}
+            <div class="project-body">
+              <p><strong>Problem:</strong> ${p.problem}</p>
 
-          <div class="project-body">
-            <p><strong>Problem:</strong> ${p.problem}</p>
+              <div>
+                <p><strong>What I did:</strong></p>
+                <ul class="project-bullets">
+                  ${p.whatIDid.map(item => `<li>${item}</li>`).join("")}
+                </ul>
+              </div>
 
-            <div>
-              <p><strong>What I did:</strong></p>
-              <ul class="project-bullets">
-                ${p.whatIDid.map(item => `<li>${item}</li>`).join("")}
-              </ul>
+              <p><strong>Key insight:</strong> ${p.keyInsight}</p>
+
+              <div class="project-actions">
+                <a class="btn btn-primary" href="${p.repo}" target="_blank" rel="noopener">View GitHub Repo</a>
+                <a class="btn" href="#contact">Contact Me</a>
+              </div>
+
+              <p class="mini-note">Tip: Add a dashboard screenshot thumbnail in the repo and link it here (optional).</p>
             </div>
-
-            <p><strong>Key insight:</strong> ${p.keyInsight}</p>
-
-            <div class="project-actions">
-              <a class="btn btn-primary" href="${p.repo}" target="_blank" rel="noopener">View GitHub Repo</a>
-              <a class="btn" href="#contact">Contact Me</a>
-            </div>
           </div>
-        </div>
-      </article>
-    `;
-  }
+        </article>
+      `;
+    }
 
     // ======= Render Projects Dynamically (Role Switch Menu must stay) =======
     function renderProjects(role = "Healthcare") {
