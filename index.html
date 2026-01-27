@@ -1,175 +1,786 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Munawer Jabeen | Data Analyst Portfolio</title>
+  <meta name="description" content="Munawer Jabeen — Data Analyst specializing in SQL, Power BI, Python, and dashboard-driven insights across Healthcare, Business, and People Analytics." />
+
   <style>
-    /* --- General Styles --- */
-    body { 
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; 
-      line-height: 1.6; 
-      margin: 20px; 
-      background: #f5f6fa; 
-      color: #333;
-    }
-    h1, h2 { color: #1a73e8; }
-    h1 { margin-bottom: 10px; }
-    h2 { margin-bottom: 20px; }
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,0.06);
+      --panel-2: rgba(255,255,255,0.08);
+      --text: rgba(255,255,255,0.92);
+      --muted: rgba(255,255,255,0.72);
+      --soft: rgba(255,255,255,0.12);
+      --border: rgba(255,255,255,0.14);
 
-    /* --- Resume Summary Section --- */
-    #summary {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      margin-bottom: 25px;
-    }
-    #summary h2 { margin-top: 0; }
-    #summary p { margin: 6px 0; }
-    .skill-badge {
-      display: inline-block;
-      background: #4ecdc4;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 12px;
-      margin: 4px 6px 0 0;
-      font-size: 0.85em;
-    }
-    #contact a { color: #1a73e8; text-decoration: none; font-weight: bold; }
-    #contact a:hover { text-decoration: underline; }
+      --brand: #7dd3fc;  /* light blue */
+      --brand-2: #60a5fa; /* blue */
+      --accent: #fbbf24; /* amber */
 
-    /* --- Top Menu Styles --- */
-    #role-menu {
-      margin-bottom: 25px;
+      --shadow: 0 18px 40px rgba(0,0,0,0.35);
+      --shadow-soft: 0 10px 24px rgba(0,0,0,0.28);
+      --radius: 18px;
+
+      --health: #fb7185;  /* rose */
+      --biz: #34d399;     /* emerald */
+      --hr: #fbbf24;      /* amber */
     }
-    #role-menu button {
-      background: #1a73e8;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 8px 16px;
-      margin-right: 10px;
+
+    *{ box-sizing: border-box; }
+    html{ scroll-behavior: smooth; }
+    body{
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(96,165,250,0.35), transparent 55%),
+        radial-gradient(900px 600px at 85% 0%, rgba(251,191,36,0.18), transparent 60%),
+        radial-gradient(900px 600px at 70% 110%, rgba(52,211,153,0.15), transparent 55%),
+        linear-gradient(180deg, #070b14 0%, #0b1220 55%, #070b14 100%);
+      line-height: 1.6;
+    }
+
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+
+    .container{
+      width: min(1080px, 92vw);
+      margin: 0 auto;
+      padding: 20px 0 60px;
+    }
+
+    /* ===== Top Nav ===== */
+    .topbar{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,0.62);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .topbar-inner{
+      width: min(1080px, 92vw);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+      gap: 14px;
+    }
+    .brand{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+    .brand-badge{
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, rgba(125,211,252,0.35), rgba(96,165,250,0.22));
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      font-weight: 900;
+    }
+    .navlinks{
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .navlinks a{
+      font-size: 0.92rem;
+      color: var(--muted);
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      text-decoration: none;
+    }
+    .navlinks a:hover{
+      color: var(--text);
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.10);
+      text-decoration: none;
+    }
+    .nav-cta{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px !important;
+      color: #071018 !important;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      border: 1px solid rgba(255,255,255,0.18) !important;
+      box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+      font-weight: 800;
+    }
+    .nav-cta:hover{ filter: brightness(1.02); }
+
+    /* ===== Hero ===== */
+    .hero{
+      margin-top: 24px;
+      border-radius: var(--radius);
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before{
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background:
+        radial-gradient(800px 260px at 20% 0%, rgba(125,211,252,0.22), transparent 60%),
+        radial-gradient(700px 240px at 80% 20%, rgba(251,191,36,0.12), transparent 60%);
+      pointer-events: none;
+    }
+    .hero-grid{
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 18px;
+      align-items: start;
+    }
+    h1{
+      margin: 0 0 8px;
+      font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+      line-height: 1.18;
+      letter-spacing: -0.2px;
+    }
+    .headline{
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .quick-facts{
+      display: grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .pillrow{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .pill{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: var(--muted);
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+    .pill strong{ color: var(--text); font-weight: 800; }
+
+    .hero-card{
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+    .hero-card h2{
+      font-size: 1rem;
+      margin: 0 0 10px;
+      color: var(--text);
+      letter-spacing: 0.2px;
+    }
+    .contact-list{
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .contact-item{
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .contact-item a{
+      color: var(--text);
+      font-weight: 800;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+    }
+    .contact-item a:hover{
+      border-bottom-color: rgba(125,211,252,0.9);
+      text-decoration: none;
+    }
+
+    .cta-row{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      font-weight: 900;
+      text-decoration: none;
       cursor: pointer;
-      font-weight: bold;
-      transition: background 0.2s;
+      transition: transform 0.15s ease, filter 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
     }
-    #role-menu button:hover { background: #155ab6; }
-
-    /* --- Project Card Styles --- */
-    .project-card {
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
+    .btn:hover{ transform: translateY(-1px); text-decoration: none; }
+    .btn-primary{
+      color: #071018;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      border-color: rgba(255,255,255,0.18);
     }
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    .btn-accent{
+      color: #1a1200;
+      background: linear-gradient(135deg, rgba(251,191,36,0.95), rgba(251,191,36,0.55));
+      border-color: rgba(255,255,255,0.18);
     }
-    .project-card h3 { margin-top: 0; }
-    .project-card ul { padding-left: 20px; }
 
-    /* --- Badges for Domains --- */
-    .badge { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 0.85em; color: white; margin-left: 10px; }
-    .Healthcare { background-color: #ff6b6b; }
-    .Business { background-color: #4ecdc4; }
-    .HR { background-color: #ffa502; }
+    /* ===== Sections ===== */
+    .section{
+      margin-top: 26px;
+      padding: 18px 0 0;
+    }
+    .section-title{
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .section-title h2{
+      margin: 0;
+      font-size: 1.2rem;
+      letter-spacing: 0.2px;
+    }
+    .section-title p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-    /* --- Practice Projects --- */
-    #practice-projects { margin-top: 40px; }
-    #practice-projects ul { padding-left: 20px; }
+    /* ===== Role Menu (must keep) ===== */
+    #role-menu{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+    }
+    #role-menu button{
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 14px;
+      padding: 10px 14px;
+      cursor: pointer;
+      font-weight: 900;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    #role-menu button:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(125,211,252,0.35);
+    }
+    #role-menu button.active{
+      color: #071018;
+      background: linear-gradient(135deg, var(--brand), var(--brand-2));
+      border-color: rgba(255,255,255,0.18);
+      box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+    }
+
+    /* ===== Projects Grid ===== */
+    #featured-projects{
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .project-card{
+      grid-column: span 12;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+      position: relative;
+    }
+    .project-card:hover{
+      transform: translateY(-3px);
+      border-color: rgba(125,211,252,0.28);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.38);
+    }
+    .project-inner{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 18px;
+    }
+    .project-top{
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .project-top h3{
+      margin: 0;
+      font-size: 1.12rem;
+      line-height: 1.25;
+    }
+    .meta{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .tag{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 0.88rem;
+      white-space: nowrap;
+    }
+    .tag strong{ color: var(--text); font-weight: 900; }
+
+    .badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .badge.Healthcare{ box-shadow: 0 0 0 1px rgba(251,113,133,0.25) inset; }
+    .badge.Business{ box-shadow: 0 0 0 1px rgba(52,211,153,0.25) inset; }
+    .badge.HR{ box-shadow: 0 0 0 1px rgba(251,191,36,0.25) inset; }
+
+    .project-body{
+      display: grid;
+      gap: 10px;
+    }
+    .project-body p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .project-body p strong{ color: var(--text); }
+
+    .project-bullets{
+      margin: 6px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .project-bullets li{ margin: 6px 0; }
+
+    .project-actions{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .mini-note{
+      margin-top: 8px;
+      color: rgba(255,255,255,0.62);
+      font-size: 0.9rem;
+    }
+
+    /* ===== Skills ===== */
+    .skills-grid{
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .skill-card{
+      grid-column: span 12;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      box-shadow: var(--shadow-soft);
+    }
+    .skill-card h3{
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+    .skill-badges{
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-badge{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      font-size: 0.92rem;
+      white-space: nowrap;
+    }
+    .skill-badge span{ color: var(--text); font-weight: 900; }
+
+    /* ===== Practice ===== */
+    .practice{
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      box-shadow: var(--shadow-soft);
+    }
+    .practice ul{
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+    .practice li{ margin: 6px 0; }
+
+    /* ===== Footer ===== */
+    footer{
+      margin-top: 34px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.62);
+      font-size: 0.92rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* ===== Responsive ===== */
+    @media (min-width: 760px){
+      .project-card{ grid-column: span 6; }
+      .skill-card{ grid-column: span 6; }
+      .project-inner{ padding: 20px; }
+    }
+    @media (min-width: 980px){
+      .hero-grid{ grid-template-columns: 1.25fr 0.75fr; }
+      .project-card{ grid-column: span 4; }
+      .skill-card{ grid-column: span 4; }
+    }
+    @media (max-width: 520px){
+      .navlinks{ gap: 8px; }
+      .navlinks a{ padding: 7px 9px; }
+      .hero{ padding: 20px; }
+      #role-menu{ padding: 10px; }
+      #role-menu button{ width: 100%; justify-content: center; }
+    }
   </style>
 </head>
+
 <body>
-
-  <!-- ===== Resume Summary Section ===== -->
-  <section id="summary">
-    <h1>Hi, I’m Munawer Jabeen 👋</h1>
-    <p>Data Analyst delivering SQL- and Power BI-driven insights to support business, healthcare, and people-analytics decision-making.</p>
-    <p>I work on end-to-end analytics projects — from data cleaning and analysis to dashboarding and insight communication — with a strong focus on clarity, usability, and real-world relevance.</p>
-    
-    <h2>🛠 Core Skills</h2>
-    <span class="skill-badge">SQL</span>
-    <span class="skill-badge">Python (Pandas, Matplotlib)</span>
-    <span class="skill-badge">Power BI</span>
-    <span class="skill-badge">Tableau</span>
-    <span class="skill-badge">Excel (Pivot Tables, KPIs, Dashboards)</span>
-    <span class="skill-badge">Healthcare Analytics</span>
-    <span class="skill-badge">Business Performance</span>
-    <span class="skill-badge">People Analytics</span>
-
-    <h2>📬 Contact</h2>
-    <p id="contact">
-      📧 Email: <a href="mailto:munawerjabeen703@gmail.com">munawerjabeen703@gmail.com</a> <br>
-      🔗 LinkedIn: <a href="https://www.linkedin.com/in/munawer-jabeen-900811380/" target="_blank">linkedin.com/in/munawer-jabeen</a>
-    </p>
-  </section>
-
-  <!-- ===== Role Switch Menu ===== -->
-  <div id="role-menu">
-    <button onclick="renderProjects('Healthcare')">Healthcare View</button>
-    <button onclick="renderProjects('Business')">Business View</button>
-    <button onclick="renderProjects('HR')">HR View</button>
+  <!-- ===== Sticky Top Nav ===== -->
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-badge">MJ</div>
+        <div>Munawer Jabeen</div>
+      </div>
+      <div class="navlinks">
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#practice">Practice</a>
+        <a class="nav-cta" href="#contact">Contact</a>
+      </div>
+    </div>
   </div>
 
-  <h2>⭐ Featured Portfolio Projects</h2>
-  <div id="featured-projects"></div>
+  <div class="container">
 
-  <!-- ===== Practice & Learning Projects ===== -->
-  <section id="practice-projects">
-    <h2>📘 Practice & Learning Projects</h2>
-    <ul>
-      <li>SQL query practice & exploratory analysis</li>
-      <li>Python EDA projects (Pandas, Matplotlib)</li>
-      <li>Power BI dashboard experiments</li>
-      <li>Continuous improvement on visualization & insights</li>
-    </ul>
-  </section>
+    <!-- ===== HERO / SUMMARY ===== -->
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div>
+          <h1>Hi, I’m Munawer Jabeen 👋</h1>
+          <p class="headline">
+            Data Analyst delivering <strong>SQL</strong>- and <strong>Power BI</strong>-driven insights across
+            <strong>Healthcare</strong>, <strong>Business</strong>, and <strong>People Analytics</strong>.
+          </p>
+
+          <div class="pillrow" aria-label="quick highlights">
+            <div class="pill">📊 <strong>Dashboards</strong> (Power BI)</div>
+            <div class="pill">🧠 <strong>Analysis</strong> (SQL, Python)</div>
+            <div class="pill">🧩 <strong>Storytelling</strong> (KPIs → Actions)</div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View Featured Projects</a>
+            <a class="btn" href="https://github.com/Mjabeen164" target="_blank" rel="noopener">GitHub Profile</a>
+            <a class="btn btn-accent" href="https://www.linkedin.com/in/munawer-jabeen-900811380/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+
+          <p class="mini-note">
+            Recruiter-friendly view: each project below shows <strong>problem → approach → key insight → links</strong>.
+          </p>
+        </div>
+
+        <!-- Contact card -->
+        <div class="hero-card" id="contact">
+          <h2>📬 Contact</h2>
+          <ul class="contact-list">
+            <li class="contact-item">
+              📧 <span>Email:</span>
+              <a href="mailto:munawerjabeen703@gmail.com">munawerjabeen703@gmail.com</a>
+            </li>
+            <li class="contact-item">
+              🔗 <span>LinkedIn:</span>
+              <a href="https://www.linkedin.com/in/munawer-jabeen-900811380/" target="_blank" rel="noopener">
+                munawer-jabeen
+              </a>
+            </li>
+            <li class="contact-item">
+              💻 <span>GitHub:</span>
+              <a href="https://github.com/Mjabeen164" target="_blank" rel="noopener">
+                Mjabeen164
+              </a>
+            </li>
+          </ul>
+
+          <div class="cta-row" style="margin-top:14px">
+            <a class="btn btn-primary" href="#projects">Jump to Projects</a>
+            <a class="btn" href="#skills">View Skills</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+      <div class="section-title">
+        <h2>⭐ Featured Projects</h2>
+        <p>Use the buttons to prioritize projects by role/domain.</p>
+      </div>
+
+      <!-- ===== Role Switch Menu (MUST KEEP) ===== -->
+      <div id="role-menu" aria-label="role switch menu">
+        <button id="btn-health" onclick="renderProjects('Healthcare')">🫁 Healthcare View</button>
+        <button id="btn-biz" onclick="renderProjects('Business')">🛒 Business View</button>
+        <button id="btn-hr" onclick="renderProjects('HR')">👥 HR View</button>
+      </div>
+
+      <div id="featured-projects"></div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="section" id="skills">
+      <div class="section-title">
+        <h2>🛠 Core Skills</h2>
+        <p>Built for entry-level Data Analyst roles: SQL + BI + clear communication.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>📌 Data Analysis</h3>
+          <div class="skill-badges">
+            <div class="skill-badge">🟦 <span>SQL</span> (joins, CTEs, window functions)</div>
+            <div class="skill-badge">🐍 <span>Python</span> (Pandas, Matplotlib)</div>
+            <div class="skill-badge">📈 <span>Excel</span> (KPIs, pivot tables)</div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>📊 Business Intelligence</h3>
+          <div class="skill-badges">
+            <div class="skill-badge">📊 <span>Power BI</span> (modeling, DAX, dashboards)</div>
+            <div class="skill-badge">🧭 <span>Tableau</span> (visual analysis)</div>
+            <div class="skill-badge">🧩 <span>Storytelling</span> (insights → actions)</div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <h3>🧬 Domain Strengths</h3>
+          <div class="skill-badges">
+            <div class="skill-badge">🫁 <span>Healthcare Analytics</span></div>
+            <div class="skill-badge">🛒 <span>Business Performance</span></div>
+            <div class="skill-badge">👥 <span>People Analytics</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRACTICE ===== -->
+    <section class="section" id="practice">
+      <div class="section-title">
+        <h2>📘 Practice & Learning</h2>
+        <p>Ongoing skill-building to improve analysis depth and visualization clarity.</p>
+      </div>
+
+      <div class="practice">
+        <ul>
+          <li>SQL query practice & exploratory analysis (metrics, cohorts, segmentation)</li>
+          <li>Python EDA projects (cleaning, distributions, correlations)</li>
+          <li>Power BI dashboard experiments (UX, drill-through, KPI design)</li>
+          <li>Continuous improvement: clearer insights, cleaner visuals, stronger storytelling</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Munawer Jabeen</div>
+      <div style="color:rgba(255,255,255,0.62)">Built on GitHub Pages • Clean, recruiter-first layout</div>
+    </footer>
+  </div>
 
   <script>
     // ======= Define Projects =======
+    // NOTE: Add thumbnails by putting an image file in your repo (e.g., /assets/healthcare.png)
+    // and set `thumb: "assets/healthcare.png"`. If not set, it will show a clean placeholder.
     const projects = [
       {
-        title: "🫁 Smoking-Related Health Risk Analysis",
+        title: "Smoking-Related Health Risk Analysis",
+        emoji: "🫁",
         domain: "Healthcare",
-        tools: "SQL, Power BI",
-        problem: "Understand how smoking duration and intensity impact different vital organs and overall health risk.",
+        tools: ["SQL", "Power BI"],
+        problem: "Quantify how smoking duration & intensity impact organ-level health risk.",
         whatIDid: [
-          "Modeled and analyzed smoking behavior, demographics, and organ-level health indicators using SQL",
+          "Modeled smoking behavior + demographics + organ indicators in SQL",
           "Built an interactive Power BI dashboard to compare risk across organs, age groups, and smoking patterns"
         ],
-        keyInsight: "Smoking-related health risks are systemic rather than isolated, increasing sharply with longer smoking duration and higher daily intake — particularly among older populations.",
-        link: "https://github.com/Mjabeen164/Smoking-Related-Health-Risk-Analysis-Across-Vital-Organs"
+        keyInsight: "Health risk is systemic (not isolated). Risk rises sharply with longer duration and higher daily intake—especially among older populations.",
+        repo: "https://github.com/Mjabeen164/Smoking-Related-Health-Risk-Analysis-Across-Vital-Organs",
+        // thumb: "assets/healthcare.png"
       },
       {
-        title: "🛒 E-Commerce Sales & Profitability Analysis",
+        title: "E-Commerce Sales & Profitability Analysis",
+        emoji: "🛒",
         domain: "Business",
-        tools: "SQL, Power BI",
-        problem: "Sales were growing, but profitability was inconsistent across categories and regions.",
+        tools: ["SQL", "Power BI"],
+        problem: "Revenue grew, but profitability was inconsistent across categories and regions.",
         whatIDid: [
           "Analyzed revenue, profit, discounting, and product performance",
           "Designed dashboards to track margin erosion and identify loss-making categories"
         ],
-        keyInsight: "High revenue does not guarantee profitability — aggressive discounting significantly reduced margins in multiple categories.",
-        link: "https://github.com/Mjabeen164/E-Commerce-Sales-Profitability-Analysis"
+        keyInsight: "High revenue ≠ high profit. Aggressive discounting reduced margins and created loss-making segments.",
+        repo: "https://github.com/Mjabeen164/E-Commerce-Sales-Profitability-Analysis",
+        // thumb: "assets/ecommerce.png"
       },
       {
-        title: "👥 HR Analytics Dashboard",
+        title: "HR Analytics Dashboard",
+        emoji: "👥",
         domain: "HR",
-        tools: "Power BI",
-        problem: "Identify patterns driving employee attrition and department-level retention risk.",
+        tools: ["Power BI"],
+        problem: "Identify patterns driving attrition and highlight department-level retention risk.",
         whatIDid: [
-          "Analyzed employee tenure, attrition trends, and departmental distribution",
-          "Built a Power BI dashboard to highlight high-risk segments"
+          "Analyzed tenure, attrition trends, and departmental distribution",
+          "Built a Power BI dashboard to surface high-risk segments for action"
         ],
-        keyInsight: "Early-tenure employees and specific departments consistently show higher attrition risk, pointing to onboarding and role-fit gaps.",
-        link: "https://github.com/Mjabeen164/HR-Analytics-Dashboard----Power-BI"
+        keyInsight: "Early-tenure employees + specific departments show higher attrition risk—suggesting onboarding and role-fit gaps.",
+        repo: "https://github.com/Mjabeen164/HR-Analytics-Dashboard----Power-BI",
+        // thumb: "assets/hr.png"
       }
     ];
 
-    // ======= Render Projects Dynamically =======
+    function domainAccent(domain){
+      if(domain === "Healthcare") return "var(--health)";
+      if(domain === "Business") return "var(--biz)";
+      if(domain === "HR") return "var(--hr)";
+      return "var(--brand)";
+    }
+
+    function setActiveButton(role){
+      const map = {
+        "Healthcare": "btn-health",
+        "Business": "btn-biz",
+        "HR": "btn-hr"
+      };
+      Object.values(map).forEach(id => {
+        const el = document.getElementById(id);
+        if(el) el.classList.remove("active");
+      });
+      const activeId = map[role] || "btn-health";
+      const btn = document.getElementById(activeId);
+      if(btn) btn.classList.add("active");
+    }
+
+    function buildProjectCard(p){
+      const tools = p.tools.map(t => `<span class="tag">🧰 <strong>${t}</strong></span>`).join("");
+      const accent = domainAccent(p.domain);
+
+      return `
+        <article class="project-card" aria-label="${p.title}">
+          <div class="project-inner">
+            <div class="project-top">
+              <div>
+                <h3>${p.emoji ? p.emoji + " " : ""}${p.title}</h3>
+                <div class="meta">
+                  <span class="badge ${p.domain}">
+                    <span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:${accent};box-shadow:0 0 0 3px rgba(255,255,255,0.06)"></span>
+                    ${p.domain}
+                  </span>
+                  ${tools}
+                </div>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <p><strong>Problem:</strong> ${p.problem}</p>
+
+              <div>
+                <p><strong>What I did:</strong></p>
+                <ul class="project-bullets">
+                  ${p.whatIDid.map(item => `<li>${item}</li>`).join("")}
+                </ul>
+              </div>
+
+              <p><strong>Key insight:</strong> ${p.keyInsight}</p>
+
+              <div class="project-actions">
+                <a class="btn btn-primary" href="${p.repo}" target="_blank" rel="noopener">View GitHub Repo</a>
+                <a class="btn" href="#contact">Contact Me</a>
+              </div>
+
+              <p class="mini-note">Tip: Add a dashboard screenshot thumbnail in the repo and link it here (optional).</p>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    // ======= Render Projects Dynamically (Role Switch Menu must stay) =======
     function renderProjects(role = "Healthcare") {
       let roleOrder;
       if(role === "Healthcare") roleOrder = ["Healthcare","Business","HR"];
@@ -177,30 +788,25 @@
       else if(role === "HR") roleOrder = ["HR","Healthcare","Business"];
       else roleOrder = ["Healthcare","Business","HR"];
 
-      const orderedProjects = roleOrder.map(r => projects.find(p => p.domain === r));
+      const orderedProjects = roleOrder
+        .map(r => projects.find(p => p.domain === r))
+        .filter(Boolean);
+
       const container = document.getElementById("featured-projects");
-      container.innerHTML = ""; // Clear previous content
+      container.innerHTML = "";
 
       orderedProjects.forEach(p => {
-        container.innerHTML += `
-          <div class="project-card">
-            <h3>${p.title} <span class="badge ${p.domain}">${p.domain}</span></h3>
-            <p><strong>Tools:</strong> ${p.tools}</p>
-            <p><strong>Problem:</strong> ${p.problem}</p>
-            <p><strong>What I Did:</strong></p>
-            <ul>
-              ${p.whatIDid.map(item => `<li>${item}</li>`).join('')}
-            </ul>
-            <p><strong>Key Insight:</strong> ${p.keyInsight}</p>
-            <p><a href="${p.link}" target="_blank">🔗 View GitHub Repository</a></p>
-          </div>
-        `;
+        container.innerHTML += buildProjectCard(p);
       });
+
+      setActiveButton(role);
     }
 
     // Initial render
-    renderProjects();
-  </script>
+    renderProjects("Healthcare");
 
+    // Footer year
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
