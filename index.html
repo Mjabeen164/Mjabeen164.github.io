@@ -824,25 +824,20 @@
 
     // ======= Render Projects Dynamically (Role Switch Menu must stay) =======
     function renderProjects(role = "Healthcare") {
-      let roleOrder;
-      if(role === "Healthcare") roleOrder = ["Healthcare","Business","HR"];
-      else if(role === "Business") roleOrder = ["Business","Healthcare","HR"];
-      else if(role === "HR") roleOrder = ["HR","Healthcare","Business"];
-      else roleOrder = ["Healthcare","Business","HR"];
+  const roleOrder =
+    role === "Business" ? ["Business","Healthcare","HR"] :
+    role === "HR" ? ["HR","Healthcare","Business"] :
+    ["Healthcare","Business","HR"];
 
-      const orderedProjects = roleOrder
-        .map(r => projects.find(p => p.domain === r))
-        .filter(Boolean);
+  const orderedProjects = roleOrder.flatMap(r =>
+    projects.filter(p => p.domain === r)
+  );
 
-      const container = document.getElementById("featured-projects");
-      container.innerHTML = "";
+  const container = document.getElementById("featured-projects");
+  container.innerHTML = orderedProjects.map(buildProjectCard).join("");
 
-      orderedProjects.forEach(p => {
-        container.innerHTML += buildProjectCard(p);
-      });
-
-      setActiveButton(role);
-    }
+  setActiveButton(role);
+}
 
     // Initial render
     renderProjects("Healthcare");
