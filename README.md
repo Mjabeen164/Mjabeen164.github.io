@@ -17,7 +17,18 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 
 ## ⭐ Featured Projects
 
-### 1. 🫁 Smoking-Related Health Risk Analysis
+### 1. 🩺 Texas Medicaid & CHIP Enrollment Trends (2014–2025)
+![Medicaid & CHIP Dashboard](assets/images/medicaid-chip-dashboard.png)  
+**Domain:** Healthcare / Public Sector Analytics | **Tools:** SQL (MySQL), Power BI, ODBC  
+**Problem:** Monitor Medicaid & CHIP child enrollment over time and identify MoM/YoY changes, volatility, and program contributions to support program monitoring and policy analysis.  
+**What I Did:**
+- Cleaned and standardized HHSC public enrollment data in MySQL; created analytical views for MoM/YoY and program contribution
+- Built an executive-style Power BI dashboard with KPIs (Total, MoM, YoY), trend views, and exception labeling (largest spikes/drops)
+- Implemented year/month range slicers to support operational monitoring and leadership reporting  
+**Key Insight:** Enrollment peaked in 2022 during continuous coverage policies and declined sharply post-2023 with eligibility redetermination; Medicaid drives most month-to-month volatility while CHIP remains relatively stable (~6% share).  
+🔗 [View GitHub Repository](https://github.com/Mjabeen164/Texas-Medicaid-CHIP-Enrollment-Trends-2014-2025)
+
+### 2. 🫁 Smoking-Related Health Risk Analysis
 ![Smoking Dashboard](assets/images/smoking-dashboard.png)  
 **Domain:** Healthcare Analytics | **Tools:** SQL, Power BI  
 **Problem:** Understand how smoking duration and intensity impacts different vital organs and overall health risk.  
@@ -29,7 +40,7 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 
 ---
 
-### 2. 🛒 E-Commerce Sales & Profitability Analysis
+### 3. 🛒 E-Commerce Sales & Profitability Analysis
 ![Ecommerce Dashboard](assets/images/ecommerce-dashboard.png) 
 **Domain:** Business Analytics | **Tools:** SQL, Power BI  
 **Problem:** Sales were growing, but profitability was inconsistent across categories and regions.  
@@ -41,7 +52,7 @@ I work on **end-to-end analytics projects** — from data cleaning and analysis 
 
 ---
 
-### 3. 👥 HR Analytics Dashboard
+### 4. 👥 HR Analytics Dashboard
 ![HR Dashboard](assets/images/hr-dashboard.png) 
 **Domain:** People Analytics | **Tools:** Power BI  
 **Problem:** Identify patterns driving employee attrition and department-level retention risk.  
