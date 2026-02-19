@@ -823,28 +823,27 @@
     }
 
     // ======= Render Projects Dynamically (Role Switch Menu must stay) =======
-    function renderProjects(role = "Healthcare") {
-  const roleOrder =
-    role === "Business" ? ["Business","Healthcare","HR"] :
-    role === "HR" ? ["HR","Healthcare","Business"] :
-    ["Healthcare","Business","HR"];
+   <script>
+  function renderProjects(role = "Healthcare") {
+    const roleOrder =
+      role === "Business" ? ["Business","Healthcare","HR"] :
+      role === "HR" ? ["HR","Healthcare","Business"] :
+      ["Healthcare","Business","HR"];
 
-  const orderedProjects = roleOrder.flatMap(r =>
-    projects.filter(p => p.domain === r)
-  );
+    // 🔧 FIX: use filter() to include ALL projects in a domain
+    const orderedProjects = roleOrder.flatMap(domain =>
+      projects.filter(p => p.domain === domain)
+    );
 
-  const container = document.getElementById("featured-projects");
-  container.innerHTML = orderedProjects.map(buildProjectCard).join("");
+    const container = document.getElementById("featured-projects");
+    container.innerHTML = orderedProjects.map(buildProjectCard).join("");
 
-  setActiveButton(role);
-}
+    setActiveButton(role);
+  }
 
-    // Initial render
-    renderProjects("Healthcare");
-
-    // Footer year
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  // Initial render
+  renderProjects("Healthcare");
+</script>
 </body>
 </html>
 
