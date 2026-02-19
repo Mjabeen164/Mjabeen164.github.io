@@ -681,156 +681,142 @@
     </footer>
   </div>
 
-  <script>
-    // ======= Define Projects =======
-    // NOTE: Add thumbnails by putting an image file in your repo (e.g., /assets/healthcare.png)
-    // and set `thumb: "assets/healthcare.png"`. If not set, it will show a clean placeholder.
-    const projects = [
-      {
-  title: "Medicaid & CHIP Enrollment Monitoring Dashboard",
-  emoji: "🩺",
-  domain: "Healthcare",
-  tools: ["SQL", "Power BI"], // add "Tableau" only if you have a Tableau version
-  problem: "Monitor Medicaid & CHIP enrollment trends and identify spikes/drops using MoM/YoY metrics for program reporting.",
-  whatIDid: [
-    "Built an interactive dashboard with year/month slicers, KPI cards (Total, MoM%, YoY%), and trend views to track enrollment changes",
-    "Created consistent metric definitions and validated trends to ensure accurate stakeholder-ready reporting",
-    "Highlighted key drivers (largest spikes/drops) to focus attention on meaningful changes instead of noisy fluctuations"
-  ],
-  keyInsight: "Enrollment changes are not uniform across time—specific months show sharp shifts that are easy to miss without MoM/YoY monitoring and clear exception-highlighting.",
-  repo: "PASTE_YOUR_GITHUB_REPO_LINK_HERE",
-  thumb: "assets/images/medicaid-chip-dashboard.png"
-},
-      {
-        title: "Smoking-Related Health Risk Analysis",
-        emoji: "🫁",
-        domain: "Healthcare",
-        tools: ["SQL", "Power BI"],
-        problem: "Quantify how smoking duration & intensity impact organ-level health risk.",
-        whatIDid: [
-          "Modeled smoking behavior + demographics + organ indicators in SQL",
-          "Built an interactive Power BI dashboard to compare risk across organs, age groups, and smoking patterns"
-        ],
-        keyInsight: "Health risk is systemic (not isolated). Risk rises sharply with longer duration and higher daily intake—especially among older populations.",
-        repo: "https://github.com/Mjabeen164/Smoking-Related-Health-Risk-Analysis-Across-Vital-Organs",
-        thumb: "assets/images/smoking-dashboard.png"
-      },
-      {
-        title: "E-Commerce Sales & Profitability Analysis",
-        emoji: "🛒",
-        domain: "Business",
-        tools: ["SQL", "Power BI"],
-        problem: "Revenue grew, but profitability was inconsistent across categories and regions.",
-        whatIDid: [
-          "Analyzed revenue, profit, discounting, and product performance",
-          "Designed dashboards to track margin erosion and identify loss-making categories"
-        ],
-        keyInsight: "High revenue ≠ high profit. Aggressive discounting reduced margins and created loss-making segments.",
-        repo: "https://github.com/Mjabeen164/E-Commerce-Sales-Profitability-Analysis",
-        thumb: "assets/images/ecommerce-dashboard.png"
-      },
-      {
-        title: "HR Analytics Dashboard",
-        emoji: "👥",
-        domain: "HR",
-        tools: ["Power BI"],
-        problem: "Identify patterns driving attrition and highlight department-level retention risk.",
-        whatIDid: [
-          "Analyzed tenure, attrition trends, and departmental distribution",
-          "Built a Power BI dashboard to surface high-risk segments for action"
-        ],
-        keyInsight: "Early-tenure employees + specific departments show higher attrition risk—suggesting onboarding and role-fit gaps.",
-        repo: "https://github.com/Mjabeen164/HR-Analytics-Dashboard----Power-BI",
-        thumb: "assets/images/hr-dashboard.png"
-      }
-    ];
-
-    function domainAccent(domain){
-      if(domain === "Healthcare") return "var(--health)";
-      if(domain === "Business") return "var(--biz)";
-      if(domain === "HR") return "var(--hr)";
-      return "var(--brand)";
+ <script>
+  // ======= Define Projects =======
+  const projects = [
+    {
+      title: "Medicaid & CHIP Enrollment Monitoring Dashboard",
+      emoji: "🩺",
+      domain: "Healthcare",
+      tools: ["SQL", "Power BI"],
+      problem: "Monitor Medicaid & CHIP enrollment trends and identify spikes/drops using MoM/YoY metrics for program reporting.",
+      whatIDid: [
+        "Built an interactive dashboard with year/month slicers, KPI cards (Total, MoM%, YoY%), and trend views to track enrollment changes",
+        "Created consistent metric definitions and validated trends to ensure accurate stakeholder-ready reporting",
+        "Highlighted key drivers (largest spikes/drops) to focus attention on meaningful changes instead of noisy fluctuations"
+      ],
+      keyInsight: "Enrollment changes are not uniform across time—specific months show sharp shifts that are easy to miss without MoM/YoY monitoring and clear exception-highlighting.",
+      repo: "https://github.com/Mjabeen164/Texas-Medicaid-CHIP-Enrollment-Trends-2014-2025",
+      thumb: "assets/images/medicaid-chip-dashboard.png"
+    },
+    {
+      title: "Smoking-Related Health Risk Analysis",
+      emoji: "🫁",
+      domain: "Healthcare",
+      tools: ["SQL", "Power BI"],
+      problem: "Quantify how smoking duration & intensity impact organ-level health risk.",
+      whatIDid: [
+        "Modeled smoking behavior + demographics + organ indicators in SQL",
+        "Built an interactive Power BI dashboard to compare risk across organs, age groups, and smoking patterns"
+      ],
+      keyInsight: "Health risk is systemic (not isolated). Risk rises sharply with longer duration and higher daily intake—especially among older populations.",
+      repo: "https://github.com/Mjabeen164/Smoking-Related-Health-Risk-Analysis-Across-Vital-Organs",
+      thumb: "assets/images/smoking-dashboard.png"
+    },
+    {
+      title: "E-Commerce Sales & Profitability Analysis",
+      emoji: "🛒",
+      domain: "Business",
+      tools: ["SQL", "Power BI"],
+      problem: "Revenue grew, but profitability was inconsistent across categories and regions.",
+      whatIDid: [
+        "Analyzed revenue, profit, discounting, and product performance",
+        "Designed dashboards to track margin erosion and identify loss-making categories"
+      ],
+      keyInsight: "High revenue ≠ high profit. Aggressive discounting reduced margins and created loss-making segments.",
+      repo: "https://github.com/Mjabeen164/E-Commerce-Sales-Profitability-Analysis",
+      thumb: "assets/images/ecommerce-dashboard.png"
+    },
+    {
+      title: "HR Analytics Dashboard",
+      emoji: "👥",
+      domain: "HR",
+      tools: ["Power BI"],
+      problem: "Identify patterns driving attrition and highlight department-level retention risk.",
+      whatIDid: [
+        "Analyzed tenure, attrition trends, and departmental distribution",
+        "Built a Power BI dashboard to surface high-risk segments for action"
+      ],
+      keyInsight: "Early-tenure employees + specific departments show higher attrition risk—suggesting onboarding and role-fit gaps.",
+      repo: "https://github.com/Mjabeen164/HR-Analytics-Dashboard----Power-BI",
+      thumb: "assets/images/hr-dashboard.png"
     }
+  ];
 
-    function setActiveButton(role){
-      const map = {
-        "Healthcare": "btn-health",
-        "Business": "btn-biz",
-        "HR": "btn-hr"
-      };
-      Object.values(map).forEach(id => {
-        const el = document.getElementById(id);
-        if(el) el.classList.remove("active");
-      });
-      const activeId = map[role] || "btn-health";
-      const btn = document.getElementById(activeId);
-      if(btn) btn.classList.add("active");
-    }
+  function domainAccent(domain){
+    if(domain === "Healthcare") return "var(--health)";
+    if(domain === "Business") return "var(--biz)";
+    if(domain === "HR") return "var(--hr)";
+    return "var(--brand)";
+  }
 
-    function buildProjectCard(p){
-      const tools = p.tools.map(t => `<span class="tag">🧰 <strong>${t}</strong></span>`).join("");
-      const accent = domainAccent(p.domain);
+  function setActiveButton(role){
+    const map = { Healthcare: "btn-health", Business: "btn-biz", HR: "btn-hr" };
+    Object.values(map).forEach(id => document.getElementById(id)?.classList.remove("active"));
+    document.getElementById(map[role] || "btn-health")?.classList.add("active");
+  }
 
-      return `
-        <article class="project-card" aria-label="${p.title}">
-          <div class="project-inner">
-            <div class="project-top">
-              <div>
-                <h3>${p.emoji ? p.emoji + " " : ""}${p.title}</h3>
-                <div class="meta">
-                  <span class="badge ${p.domain}">
-                    <span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:${accent};box-shadow:0 0 0 3px rgba(255,255,255,0.06)"></span>
-                    ${p.domain}
-                  </span>
-                  ${tools}
-                </div>
+  function buildProjectCard(p){
+    const tools = p.tools.map(t => `<span class="tag">🧰 <strong>${t}</strong></span>`).join("");
+    const accent = domainAccent(p.domain);
+
+    return `
+      <article class="project-card" aria-label="${p.title}">
+        <div class="project-inner">
+          <div class="project-top">
+            <div>
+              <h3>${p.emoji ? p.emoji + " " : ""}${p.title}</h3>
+              <div class="meta">
+                <span class="badge ${p.domain}">
+                  <span style="display:inline-block;width:8px;height:8px;border-radius:999px;background:${accent};box-shadow:0 0 0 3px rgba(255,255,255,0.06)"></span>
+                  ${p.domain}
+                </span>
+                ${tools}
               </div>
-            </div>
-
-            <div class="project-body">
-              <p><strong>Problem:</strong> ${p.problem}</p>
-
-              <div>
-                <p><strong>What I did:</strong></p>
-                <ul class="project-bullets">
-                  ${p.whatIDid.map(item => `<li>${item}</li>`).join("")}
-                </ul>
-              </div>
-
-              <p><strong>Key insight:</strong> ${p.keyInsight}</p>
-
-              <div class="project-actions">
-                <a class="btn btn-primary" href="${p.repo}" target="_blank" rel="noopener">View GitHub Repo</a>
-                <a class="btn" href="#contact">Contact Me</a>
-              </div>
-
-             ${p.thumb ? `
-  <div class="thumb-wrap">
-    <img class="thumb-img"
-         src="${p.thumb}"
-         alt="${p.title} dashboard preview"
-         loading="lazy"
-         onerror="this.closest('.thumb-wrap').style.display='none';" />
-  </div>
-` : `
-  <p class="mini-note">Dashboard preview coming soon.</p>
-`}
-
             </div>
           </div>
-        </article>
-      `;
-    }
 
-    // ======= Render Projects Dynamically (Role Switch Menu must stay) =======
-   <script>
+          <div class="project-body">
+            <p><strong>Problem:</strong> ${p.problem}</p>
+
+            <div>
+              <p><strong>What I did:</strong></p>
+              <ul class="project-bullets">
+                ${p.whatIDid.map(item => `<li>${item}</li>`).join("")}
+              </ul>
+            </div>
+
+            <p><strong>Key insight:</strong> ${p.keyInsight}</p>
+
+            <div class="project-actions">
+              <a class="btn btn-primary" href="${p.repo}" target="_blank" rel="noopener">View GitHub Repo</a>
+              <a class="btn" href="#contact">Contact Me</a>
+            </div>
+
+            ${p.thumb ? `
+              <div class="thumb-wrap">
+                <img class="thumb-img"
+                     src="${p.thumb}"
+                     alt="${p.title} dashboard preview"
+                     loading="lazy"
+                     onerror="this.closest('.thumb-wrap').style.display='none';" />
+              </div>
+            ` : `
+              <p class="mini-note">Dashboard preview coming soon.</p>
+            `}
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
+  // ======= Render Projects Dynamically =======
   function renderProjects(role = "Healthcare") {
     const roleOrder =
       role === "Business" ? ["Business","Healthcare","HR"] :
       role === "HR" ? ["HR","Healthcare","Business"] :
       ["Healthcare","Business","HR"];
 
-    // 🔧 FIX: use filter() to include ALL projects in a domain
     const orderedProjects = roleOrder.flatMap(domain =>
       projects.filter(p => p.domain === domain)
     );
@@ -841,8 +827,8 @@
     setActiveButton(role);
   }
 
-  // Initial render
   renderProjects("Healthcare");
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
